@@ -1,12 +1,12 @@
-const get=createGetter()
-const set=createSetter()
+const get = createGetter()
+const set = createSetter()
 
-function createGetter(){
+function createGetter(isReadonly = false, shallow = false) {
 
 }
 
-function createSetter(){
-    
+function createSetter() {
+
 }
 
 export const mutableHandlers = {
