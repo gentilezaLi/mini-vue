@@ -10,11 +10,11 @@ export class ReactiveEffect {
   deps = [];
   public onStop?: () => void;
   constructor(public fn, public scheduler?) {
-    console.log("创建 ReactiveEffect 对象");
+    // console.log("创建 ReactiveEffect 对象");
   }
 
   run() {
-    console.log("run");
+    // console.log("run");
     // 运行 run 的时候，可以控制 要不要执行后续收集依赖的一步
     // 目前来看的话，只要执行了 fn 那么就默认执行了收集依赖
     // 这里就需要控制了
@@ -34,7 +34,7 @@ export class ReactiveEffect {
     // 利用全局属性来获取当前的 effect
     activeEffect = this as any;
     // 执行用户传入的 fn
-    console.log("执行用户传入的 fn");
+    // console.log("执行用户传入的 fn");
     const result = this.fn();
     // 重置
     shouldTrack = false;
