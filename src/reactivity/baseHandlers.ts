@@ -27,6 +27,11 @@ function createSetter() {
     }
 }
 
+export const mutableHandlers = {
+    get,
+    set,
+}
+
 export const readonlyHandlers = {
     get: readonlyGet,
     set(target, key) {
@@ -49,9 +54,4 @@ export const shallowReadonlyHandlers = {
         )
         return true
     }
-}
-
-export const mutableHandlers = {
-    get,
-    set,
 }

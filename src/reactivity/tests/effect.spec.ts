@@ -2,20 +2,20 @@ import { reactive } from '../reactive'
 import { effect, stop } from '../effect'
 
 describe('effect', () => {
-    // it('happy path', () => {
-    //     const user = reactive({
-    //         age: 10
-    //     })
-    //     let nextage
-    //     effect(() => {
-    //         nextage = user.age + 1
-    //     })
-    //     expect(nextage).toBe(11)
+    it('happy path', () => {
+        const user = reactive({
+            age: 10
+        })
+        let nextage
+        effect(() => {
+            nextage = user.age + 1
+        })
+        expect(nextage).toBe(11)
 
-    //     //update
-    //     user.age++
-    //     expect(nextage).toBe(12)
-    // })
+        //update
+        user.age++
+        expect(nextage).toBe(12)
+    })
 
     // it('should return runner when call effect', () => {
     //     //1.effect(fn)=>function(runner)=>fn=>return
@@ -98,12 +98,12 @@ describe('effect', () => {
     // })
 
     //新增  观察基本特性
-    it('should observe basic properties',()=>{
-        let dummy
-        const counter=reactive({num:0})
-        effect(()=>dummy=counter.num)
-        expect(dummy).toBe(0)
-        dummy.num=7
-        expect(dummy).toBe(7)
-    })
+    // it('should observe basic properties',()=>{
+    //     let dummy
+    //     const counter=reactive({num:0})
+    //     effect(()=>dummy=counter.num)
+    //     expect(dummy).toBe(0)
+    //     dummy.num=7
+    //     expect(dummy).toBe(7)
+    // })
 })
